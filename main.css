@@ -197,7 +197,7 @@ section .title::after{
 
 .home .home-content a:hover{
     background: none;
-    color: var(--crimson);
+    color: #fff;
 }
 
 /***********************About Section*************************/
@@ -386,6 +386,7 @@ section .title::after{
 
 .skills .skills-content .column:hover{
     box-shadow: 0 0 10px var(--crimson), 0 0 20px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
+    cursor: pointer;
 }
 
 .skills .skills-content{
@@ -403,6 +404,11 @@ section .title::after{
     font-size: 15px;
     line-height: 30px;
     word-break: keep-all;
+}
+
+.skills .skills-content .column p a:hover{
+    color: var(--crimson);
+    text-decoration: underline;
 }
 
 /************************contact section******************/
