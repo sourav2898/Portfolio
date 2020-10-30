@@ -176,6 +176,13 @@ section .title::after{
     color: var(--crimson);
 }
 
+.home .home-content .text-3 span.typing{
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 5s linear infinite; 
+    transition: all 0.3s ease;
+}
+
 .home .home-content a{
     display: inline-block;
     background: var(--crimson);
@@ -237,6 +244,24 @@ section .title::after{
     color: var(--crimson);
 }
 
+.about .about-content .right .text span.typing-2{
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 5s linear infinite; 
+    transition: all 0.3s ease;
+}
+
+@keyframes animate{
+    0%,18%,30%,50.1%,60%,65.1%,80%,90.1%,92%{
+        color: var(--crimson);
+        text-shadow: none;
+    }
+    18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+        color: #fff;
+        text-shadow: 0 0 10px var(--crimson),0 0 20px var(--crimson),0 0 40px var(--crimson),0 0 80px var(--crimson),0 0 160px var(--crimson);
+    }
+}
+
 .about .about-content .right p{
     text-align: justify;
     word-break: keep-all;
@@ -260,16 +285,19 @@ section .title::after{
 .about .about-content .right a.mywork{
     color: var(--crimson);
     background: none;
+    transition: all 0.3s ease;
 }
 
 .about .about-content .right a:hover{
     color: var(--crimson);
     background: none;
+    box-shadow: 0 0 10px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
 }
 
 .about .about-content .right a:hover.mywork{
     background: var(--crimson);
     color: #fff;
+    box-shadow: 0 0 10px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
 }
 
 /***********************Service section************************/
@@ -354,6 +382,10 @@ section .title::after{
     padding: 10px;
     border: 2px solid var(--crimson);
     border-radius: 5px;
+}
+
+.skills .skills-content .column:hover{
+    box-shadow: 0 0 10px var(--crimson), 0 0 20px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
 }
 
 .skills .skills-content{
