@@ -900,6 +900,18 @@ footer span a{
 footer span a:hover{
     text-decoration: underline;
 }
+
+footer .social a{
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+footer .social a:hover{
+    font-size: 30px;
+    color: lightcoral;
+}
 /***********************media query************************/
 @media screen and (max-width:600px){
     .navbar .max-width{
