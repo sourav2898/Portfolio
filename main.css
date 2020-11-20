@@ -105,7 +105,7 @@ section .title::after{
 }
 
 .navbar .logo a span{
-    color: var(--crimson);
+    color: #00dbde;
     transition: all 0.3s ease;
 }
 
@@ -128,12 +128,12 @@ section .title::after{
 }
 
 .navbar .menu li a:hover{
-    color: var(--crimson);
+    color: #00dbde;
     transition: all 0.3s ease;
 }
 
 .navbar.sticky .menu li a:hover{
-    color: wheat;
+    color: #c2e59c;
 }
 
 .menu-btn{
@@ -142,11 +142,11 @@ section .title::after{
     cursor: pointer;
     display: none;
 }
-
 /*******************Home section************************/
 .home{
     display: flex;
-    background-image: url(images/1.jpg);
+/*    background-image: linear-gradient(#0b8793,#fff);*/
+    background-image: linear-gradient(#0b8793,#fff);
     background-size: cover;
     height: 100vh;
     color: #fff;
@@ -154,9 +154,19 @@ section .title::after{
 }
 
 .home .max-width{
-    margin: auto 0 auto 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: space-around;
+    margin: auto 200px;
 }
 
+.home .max-width img{
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
 .home .home-content .text-1{
     font-size: 27px;
 }
@@ -181,23 +191,24 @@ section .title::after{
     outline: none;
     animation: animate 5s linear infinite; 
     transition: all 0.3s ease;
+    color: #fff;
 }
 
 .home .home-content a{
     display: inline-block;
-    background: var(--crimson);
+    background: #0b8793;
     font-size: 25px;
     padding: 18px 36px;
     color: aliceblue;
     margin-top:20px;
     border-radius: 5px;
-    border: 2px solid var(--crimson);
+    border: 2px solid #0b8793;
     transition: all 0.3s ease;
 }
 
 .home .home-content a:hover{
     background: none;
-    color: #fff;
+    color: #0b8793;
 }
 
 /***********************About Section*************************/
@@ -253,12 +264,12 @@ section .title::after{
 
 @keyframes animate{
     0%,18%,30%,50.1%,60%,65.1%,80%,90.1%,92%{
-        color: var(--crimson);
+        color: #373B44;
         text-shadow: none;
     }
     18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
         color: #fff;
-        text-shadow: 0 0 10px var(--crimson),0 0 20px var(--crimson),0 0 40px var(--crimson),0 0 80px var(--crimson),0 0 160px var(--crimson);
+        text-shadow: 0 0 10px #00dbde,0 0 20px #00dbde,0 0 40px #00dbde,0 0 80px #00dbde,0 0 160px #00dbde;
     }
 }
 
@@ -291,13 +302,73 @@ section .title::after{
 .about .about-content .right a:hover{
     color: var(--crimson);
     background: none;
-    box-shadow: 0 0 10px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
 }
 
 .about .about-content .right a:hover.mywork{
     background: var(--crimson);
     color: #fff;
-    box-shadow: 0 0 10px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
+}
+
+.about .coding_platforms{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+.about .coding_platforms a{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.about .coding_platforms button{
+    display: inline-block;
+    background: var(--crimson);
+    font-size: 25px;
+    padding: 10px 30px;
+    font-weight: 600;
+    margin-top:20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.about .coding_platforms button.hackerrank{
+    background: lightgreen;
+    border: 2px solid lightgreen;
+}
+
+.about .coding_platforms button.hackerrank:hover{
+    background: #fff;
+    color: green;
+    box-shadow: 0 0 10px lightgreen, 0 0 40px lightgreen, 0 0 80px lightgreen;
+}
+
+.about .coding_platforms button.leetcode{
+    background: #f5b051;
+    border: 2px solid #f5b051;
+}
+
+.about .coding_platforms button.leetcode:hover{
+    background: #fff;
+    color: #f5b051;
+    box-shadow: 0 0 10px #f5b051, 0 0 40px #f5b051, 0 0 80px #f5b051;
+}
+
+.about .coding_platforms button.github{
+    background: #222;
+    border: 2px solid #222;
+    color: #fff;
+}
+
+.about .coding_platforms button.github:hover{
+    background: #fff;
+    color: #222;
+    box-shadow: 0 0 10px #555, 0 0 40px #555, 0 0 80px #555;
+}
+
+.about .coding_platforms button img{
+    width: 20px;
+    height: 20px;
 }
 
 /***********************Service section************************/
@@ -385,7 +456,7 @@ section .title::after{
 }
 
 .skills .skills-content .column:hover{
-    box-shadow: 0 0 10px var(--crimson), 0 0 20px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
+    box-shadow: 0 0 10px #73C8A9, 0 0 20px #73C8A9, 0 0 40px #73C8A9, 0 0 80px #73C8A9;
     cursor: pointer;
 }
 
@@ -414,7 +485,8 @@ section .title::after{
 /************************contact section******************/
 
 .contact{
-    padding-top:0; 
+    padding-top:50px; 
+    background-color: #485461;
 }
 
 .contact .title::before{
@@ -423,6 +495,7 @@ section .title::after{
 
 .contact .title::after{
     content: "Get In Touch";
+    background: #485461;
 }
 
 .contact .contact-content{
@@ -465,7 +538,7 @@ section .title::after{
 }
 
 .contact .contact-content .row .sub-title{
-    color: #333;
+    color: var(--crimson);
 }
 
 .contact .contact-content .right form .fields{
@@ -538,7 +611,7 @@ footer span a:hover{
     text-decoration: underline;
 }
 /***********************media query************************/
-@media screen and (max-width:900px){
+@media screen and (max-width:600px){
     .navbar .max-width{
         padding: 0 50px;
     }
@@ -577,9 +650,14 @@ footer span a:hover{
         display: inline-block;
         font-size: 20px;
     }
+
+    .home .max-width{
+        margin: auto 10px;
+    }
     
-    .home{
-        background-image: url(images/phone_bg.jpg);
+    .home .max-width .home-content{
+        text-align: center;
+        width: 100%;
     }
     
     .home .home-content .text-2{
@@ -628,6 +706,10 @@ footer span a:hover{
         text-align: center;
         font-size: 15px;
         margin-right: 1px;
+    }
+    
+    .about .coding_platforms button{
+        display: block;
     }
     
     .service .serv-content .card{
