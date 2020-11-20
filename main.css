@@ -195,6 +195,7 @@ section .title::after{
 }
 
 .home .home-content a{
+    position: relative;
     display: inline-block;
     background: #0b8793;
     font-size: 25px;
@@ -202,13 +203,77 @@ section .title::after{
     color: aliceblue;
     margin-top:20px;
     border-radius: 5px;
-    border: 2px solid #0b8793;
+    border: 2px solid transparent;
     transition: all 0.3s ease;
+}
+
+.home .home-content a:hover:before{
+    animation: animatehire 1s linear forwards;
 }
 
 .home .home-content a:hover{
     background: none;
     color: #0b8793;
+}
+
+.home .home-content a:hover:after{
+    animation: animatehire2 1s linear forwards;
+}
+
+@keyframes animatehire{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: var(--crimson);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: var(--crimson);
+        border-right-color: var(--crimson);
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: var(--crimson);
+        border-right-color: var(--crimson);
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        box-shadow: 0 0 10px var(--crimson), 0 0 40px var(--crimson), 0 0 80px var(--crimson);
+    }
+}
+@keyframes animatehire2{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: var(--crimson);
+        border-left-color: var(--crimson);
+    }
+    50%{
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: var(--crimson);
+        border-left-color: var(--crimson);
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: var(--crimson);
+        border-left-color: var(--crimson);
+        background: transparent;
+        box-shadow: 0 0 10px var(--crimson) 0 40px var(--crimson) 0 80px var(--crimson);
+    }
 }
 
 /***********************About Section*************************/
@@ -225,9 +290,29 @@ section .title::after{
 }
 
 .about .about-content .left{
+    position: relative;
     width: 45%;
     text-align: center;
 }
+
+.about .about-content .left:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    Left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,.1);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.about .about-content .left:hover:before{
+    Left: -50%;
+    transform: skewX(-5deg);
+}
+
+
 
 .about .about-content .left img{
     height: 400px;
@@ -235,10 +320,6 @@ section .title::after{
     object-fit: cover;
     border-radius: 15px;
     padding: 5px;
-}
-
-.about .about-content .left img:hover{
-    border: 5px solid var(--crimson);
 }
 
 .about .about-content .right{
@@ -315,13 +396,9 @@ section .title::after{
     justify-content: space-around;
     text-align: center;
 }
-.about .coding_platforms a{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
-.about .coding_platforms button{
+.about .coding_platforms a{
+    position: relative;
     display: inline-block;
     background: var(--crimson);
     font-size: 25px;
@@ -329,44 +406,256 @@ section .title::after{
     font-weight: 600;
     margin-top:20px;
     border-radius: 5px;
+    cursor: pointer;
     transition: all 0.3s ease;
+    border: none;
+    transition: all 0.3 ease;
 }
 
-.about .coding_platforms button.hackerrank{
+.about .coding_platforms a:before,.home .home-content a:before{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 7px;
+}
+
+.about .coding_platforms a.hackerrank:hover:before{
+    animation: animatehacker 1s linear forwards;
+}
+.about .coding_platforms a.leetcode:hover:before{
+    animation: animateleetcode 1s linear forwards;
+}
+.about .coding_platforms a.github:hover:before{
+    animation: animategithub 1s linear forwards;
+}
+
+.about .coding_platforms a:after,.home .home-content a:after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 7px;
+}
+
+.about .coding_platforms a.hackerrank:hover:after{
+    animation: animatehacker2 1s linear forwards;
+}
+.about .coding_platforms a.leetcode:hover:after{
+    animation: animateleetcode2 1s linear forwards;
+}
+.about .coding_platforms a.github:hover:after{
+    animation: animategithub2 1s linear forwards;
+}
+
+@keyframes animatehacker{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: lightgreen;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: lightgreen;
+        border-right-color: lightgreen;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: lightgreen;
+        border-right-color: lightgreen;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        box-shadow: 0 0 10px lightgreen, 0 0 40px lightgreen, 0 0 80px lightgreen;
+    }
+}
+@keyframes animateleetcode{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: #f5b051;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: #f5b051;
+        border-right-color: #f5b051;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: #f5b051;
+        border-right-color: #f5b051;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        box-shadow: 0 0 10px #f5b051, 0 0 40px #f5b051, 0 0 80px #f5b051;
+    }
+}
+@keyframes animategithub{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: #222;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: #222;
+        border-right-color: #222;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: #222;
+        border-right-color: #222;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        box-shadow: 0 0 10px #222, 0 0 40px #222, 0 0 80px #222;
+    }
+}
+
+
+@keyframes animatehacker2{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: lightgreen;
+        border-left-color: lightgreen;
+    }
+    50%{
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: lightgreen;
+        border-left-color: lightgreen;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: lightgreen;
+        border-left-color: lightgreen;
+        background: transparent;
+        box-shadow: 0 0 10px lightgreen 0 0 40px lightgreen 0 0 80px lightgreen;
+    }
+}
+@keyframes animateleetcode2{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #f5b051;
+        border-left-color: #f5b051;
+    }
+    50%{
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #f5b051;
+        border-left-color: #f5b051;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #f5b051;
+        border-left-color: #f5b051;
+        background: transparent;
+        box-shadow: 0 0 10px #f5b051 0 0 40px #f5b051 0 0 80px #f5b051;
+    }
+}
+@keyframes animategithub2{
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #222;
+        border-left-color: #222;
+    }
+    50%{
+        width: 0;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #222;
+        border-left-color: #222;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #222;
+        border-left-color: #222;
+        background: transparent;
+        box-shadow: 0 0 10px #222 0 40px #222 0 80px #222;
+    }
+}
+
+.about .coding_platforms a.hackerrank{
     background: lightgreen;
-    border: 2px solid lightgreen;
+    border: none;
 }
 
-.about .coding_platforms button.hackerrank:hover{
-    background: #fff;
+.about .coding_platforms a.hackerrank:hover{
     color: green;
-    box-shadow: 0 0 10px lightgreen, 0 0 40px lightgreen, 0 0 80px lightgreen;
+    background: #fff;
 }
 
-.about .coding_platforms button.leetcode{
+.about .coding_platforms a.leetcode{
     background: #f5b051;
-    border: 2px solid #f5b051;
+    border: none;
 }
 
-.about .coding_platforms button.leetcode:hover{
+.about .coding_platforms a.leetcode:hover{
     background: #fff;
     color: #f5b051;
-    box-shadow: 0 0 10px #f5b051, 0 0 40px #f5b051, 0 0 80px #f5b051;
 }
 
-.about .coding_platforms button.github{
+.about .coding_platforms a.github{
     background: #222;
-    border: 2px solid #222;
     color: #fff;
+    border: none;
 }
 
-.about .coding_platforms button.github:hover{
+.about .coding_platforms a.github:hover{
     background: #fff;
     color: #222;
-    box-shadow: 0 0 10px #555, 0 0 40px #555, 0 0 80px #555;
 }
 
-.about .coding_platforms button img{
+.about .coding_platforms a img{
     width: 20px;
     height: 20px;
 }
@@ -453,11 +742,12 @@ section .title::after{
     padding: 10px;
     border: 2px solid var(--crimson);
     border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .skills .skills-content .column:hover{
     box-shadow: 0 0 10px #73C8A9, 0 0 20px #73C8A9, 0 0 40px #73C8A9, 0 0 80px #73C8A9;
-    cursor: pointer;
 }
 
 .skills .skills-content{
@@ -570,7 +860,7 @@ section .title::after{
     border: 1px solid lightgrey;
     border-radius: 6px;
     outline: none;
-    padding: 0 15px;
+    padding: 10px 15px;
     font-size: 17px;
     outline: none;
 }
