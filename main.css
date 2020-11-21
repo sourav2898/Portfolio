@@ -77,6 +77,46 @@ section .title::after{
     color: var(--crimson);
 }
 
+.social-links{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 10px;
+    top: 30%;
+    box-sizing: border-box;
+}
+
+.social-links a{
+    color: #fff;
+    font-size: 30px;
+    margin: 10px;
+}
+
+a.fb:hover{
+    font-size: 35px;
+    color: #4d7efa;
+}
+
+a.insta:hover{
+    font-size: 35px;
+    color: lightcoral;
+}
+
+a.linkedin:hover{
+    font-size: 35px;
+    color: #0a33f0;
+}
+
+a.github:hover{
+    font-size: 35px;
+    color: #222;
+}
+
+a.gmail:hover{
+    font-size: 35px;
+    color: #cf3d04;
+}
+
 /**************** navbar-styling ******************/
 
 .navbar{
@@ -164,7 +204,7 @@ section .title::after{
 .home .max-width img{
     width: 300px;
     height: 300px;
-    margin-right: 20px;
+    margin-right: 50px;
     border-radius: 50%;
 }
 .home .home-content .text-1{
