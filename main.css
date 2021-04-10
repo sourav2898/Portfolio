@@ -717,8 +717,10 @@ a.gmail:hover{
 }
 
 .service .serv-content .card{
-    background: #222;
+    background: linear-gradient(
+        45deg,var(--crimson), #ff0058);
     width: calc(33% - 20px);
+    min-height: 400px;
     text-align: center;
     border-radius: 6px;
     padding: 20px 25px;
@@ -779,11 +781,13 @@ a.gmail:hover{
 
 .skills .skills-content .column{
     width: calc(50% - 80px);
+    min-height: 310px;
     padding: 10px;
-    border: 2px solid var(--crimson);
+    /* border: 2px solid var(--crimson); */
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
+    background: linear-gradient( 45deg, #4dff03, #00d0ff);
 }
 
 .skills .skills-content .column:hover{
@@ -796,7 +800,7 @@ a.gmail:hover{
 
 .skills .skills-content .left .text,.skills .skills-content .right .text{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
     text-align: center;
     padding: 10px;
 }
